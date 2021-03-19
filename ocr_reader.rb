@@ -1,8 +1,7 @@
 require 'pry'
 class OcrReader
   def initialize(file)
-    @input = File.open(file)
-    binding.pry
+    @input = File.read(file)
   end
 
   def parse
@@ -19,8 +18,6 @@ class OcrReader
       8 => [],
       9 => []
     }
-
-    binding.pry
 
     parsed_keys = parsed_values.map do |k, v|
       if v == split
