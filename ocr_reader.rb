@@ -6,9 +6,8 @@ class OcrReader
     end
   end
 
+
   def parse
-    split = @input.split(/ /).map { |element| element.split("\n") }
-    binding.pry
     parsed_values = {
       0 => [[], ["_", "|"], ["|", "|_|"]],
       1 => [["", "|", "|"]],
