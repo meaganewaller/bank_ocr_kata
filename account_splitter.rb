@@ -1,9 +1,10 @@
 
+require 'pry'
 class AccountSplitter
   def initialize
   end
 
   def split(input)
-    input.split("\n")
+    lines = input.split("\n").map { |line| line.split(/(\W)/).select { |el| el != "" } }
   end
 end

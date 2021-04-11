@@ -4,12 +4,22 @@ describe AccountSplitter do
   it "transforms multiline input into multiline characters" do
     account_splitter = AccountSplitter.new
     input = <<-HEREDOC
-
-  |  |  |  |  |  |  |  |  |
-  |  |  |  |  |  |  |  |  |
-
-    HEREDOC
+                   
+  | | | | | | | | |
+  | | | | | | | | |
+                   
+HEREDOC
     output = account_splitter.split(input)
-    expect(output).to eql [[" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"]]
+    expect(output).to eql [
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+      [" ", " ", " "], [" ", " ", "|"], [" ", " ", "|"],
+  ]
   end
 end
